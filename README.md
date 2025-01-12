@@ -1,1 +1,3 @@
-../../C/ncurses.d/console-arts/first/README.md
+# snowing on your terminal.
+
+make your terminal look like winter.
