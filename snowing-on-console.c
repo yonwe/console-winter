@@ -7,7 +7,7 @@ enum {START, END};
 enum {HEIGHT, WIDTH};
 
 int h, w;
-static int count;
+int count;
 
 int randomPosition[3];
 
@@ -20,6 +20,7 @@ void set_disp(int code)
 			noecho();
 			curs_set(0);
 			timeout(0);
+			start_color();
 			break;
 		case END:
 			endwin();
@@ -36,9 +37,9 @@ void mapping(void)
 	randomPosition[3] = 0;
 	mvwprintw(stdscr, 0, 0, "%d", count);
 	mvwaddch(stdscr, randomPosition[HEIGHT], randomPosition[WIDTH], '*');
+	count++;
 	refresh();
 	sleep(1);
-	count++;
 }
 
 int main(void)
